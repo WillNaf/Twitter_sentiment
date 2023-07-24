@@ -13,10 +13,10 @@ from collections import defaultdict
 from wordcloud import WordCloud
 
 # Twitter API credentials
-consumer_key = 'WQVMmU1o7a6mKj5CsgyhGRfje'
-consumer_secret = 'E4r0bRlfa4IK4Nc78vd3REgGFRnrOIquAq7YtYLFiGSJdTnYiS'
-access_token = '565841545-G7xQ4dBXQx8eIUddWZX7kmKFYQN1XDpJc2xgSS7n'
-access_token_secret = 'IB7m9lPxKV2C2AHAIUaALvrxA1MZ8atJz7LCWPpuForRC'
+consumer_key = CONSUMER_KEY
+consumer_secret = CONSUMER_SECRET_KEY
+access_token = ACCESS_KEY
+access_token_secret = ACCESS_SECRET_KEY
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
