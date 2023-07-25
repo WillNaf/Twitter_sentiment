@@ -16,7 +16,7 @@ import seaborn as sns
 df_tweets = pd.read_csv('tweet.csv')
 
 # Use only the first 500 rows
-df_tweets = df_tweets.head(500)
+df_tweets = df_tweets.head(5000)
 
 # Load the 'company_tweets' dataset
 df_company = pd.read_csv('company_tweet.csv')
