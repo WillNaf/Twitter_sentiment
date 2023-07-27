@@ -1,5 +1,5 @@
 # Stock Sentiment Analysis using Twitter Data
-This Python program analyzes sentiment towards various stocks using data from tweets. The sentiment analysis is done using the Natural Language Toolkit (NLTK). The result is a representation of sentiment towards the analyzed stocks, as well as visualizations in the form of a Word Cloud and sentiment distribution for each stock.
+This Python program analyzes sentiment towards various stocks using data from tweets. The sentiment analysis is done using the Natural Language Toolkit (NLTK). The result is a representation of sentiment towards the analyzed stocks, as well as visualizations in the form of a Word Cloud and sentiment distribution for each stock. This program uses NLTK to decypher 5000 tweets between the 6 companies is neutral, positive or negative.
 
 ## Dependencies
 This project requires Python 3 and the following Python libraries installed:
@@ -41,6 +41,28 @@ Bar plots for each stock, showing the sentiment distribution ('positive', 'negat
 A heatmap of the correlation matrix.
 A Word Cloud representing frequently used words in the tweets.
 Please note that due to the randomness of train-test split, the results may slightly vary each time you run the script.
+
+# Analysis
+
+## Net Sentiment 
+
+![net_sentiment](https://github.com/WillNaf/Twitter_sentiment/assets/118142412/1cd78739-fc14-4e85-bfd0-c666e4e55b00)
+
+The bar chart shows that the stock with the most positive net sentiment is GOOGL, followed by GOOG and AAPL. The stock with the most negative net sentiment is AMZN, followed by FB and AMD.
+
+The net sentiment for each stock is calculated by subtracting the number of negative tweets from the number of positive tweets, and then dividing by the total number of tweets. For example, the net sentiment for AAPL is calculated as follows:
+
+(Number of positive tweets for AAPL) - (Number of negative tweets for AAPL) / (Total number of tweets for AAPL)
+
+The net sentiment for a stock can be interpreted as the overall sentiment of the tweets about that stock. A positive net sentiment indicates that the tweets about the stock are mostly positive, while a negative net sentiment indicates that the tweets about the stock are mostly negative.
+
+The bar chart shows that the overall sentiment of the tweets about the stocks in this dataset is positive. However, there are a no stocks with a negative net sentiment.
+
+## Sentiment Distribution
+
+## Apple
+![AAPL_distribution](https://github.com/WillNaf/Twitter_sentiment/assets/118142412/ebce896f-fe40-46e7-99a7-665c6f4014a2)
+
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
