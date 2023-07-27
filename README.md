@@ -1,68 +1,65 @@
 # Stock Sentiment Analysis using Twitter Data
-This Python program analyzes sentiment towards various stocks using data from tweets. The sentiment analysis is done using the Natural Language Toolkit (NLTK). The result is a representation of sentiment towards the analyzed stocks, as well as visualizations in the form of a Word Cloud and sentiment distribution for each stock. This program uses NLTK to decypher 5000 tweets between the 6 companies is neutral, positive or negative.
+This project is a Python-based sentiment analysis tool for Twitter data. It focuses on tweets related to publicly traded stocks and uses various Natural Language Processing (NLP) and Machine Learning techniques to analyze the sentiment of these tweets.
 
-## Dependencies
-This project requires Python 3 and the following Python libraries installed:
+## Table of Contents
+Requirements
+Data Preparation
+Sentiment Analysis
+Preprocessing
+Vectorization
+Model Training and Prediction
+Net Sentiment Calculation
+Data Visualization
+Correlation Matrix
+Word Cloud
 
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
-- NLTK
-- Scikit-Learn
-- WordCloud
+##Requirements
+The libraries used in this project are:
 
-## Data
-The program uses two datasets: 'tweet.csv' and 'company_tweet.csv'. The 'tweet.csv' file contains the tweets and their corresponding tweet IDs, while the 'company_tweet.csv' file contains the ticker symbols and their corresponding tweet IDs.
+- re
+- matplotlib
+- numpy
+- pandas
+- nltk
+- sklearn
+- wordcloud
+- seaborn
+- os
+Ensure these are installed in your environment before running the script.
 
-## How to Run
-Make sure you have installed all the dependencies mentioned above.
-Place 'tweet.csv' and 'company_tweet.csv' in your working directory.
-Run the Python script in your terminal/command prompt.
-## Methodology
-The program starts by loading and merging two datasets based on 'tweet_id'.
+## Data Preparation
+The data required for this project include two CSV files: tweet.csv and company_tweet.csv. The first dataset consists of tweets, and the second dataset associates these tweets with particular publicly-traded companies based on ticker symbols. The datasets are loaded and merged on the 'tweet_id' field, associating each tweet with its respective company.
 
-It then uses NLTK's SentimentIntensityAnalyzer to calculate sentiment scores for each tweet and labels them as 'positive', 'negative' or 'neutral'. This sentiment information is saved as a CSV file named 'stocks.csv'.
+## Sentiment Analysis
+Sentiment analysis is performed on each tweet using the SentimentIntensityAnalyzer from NLTK. This tool provides a polarity score, which is a float within the range of -1 (most negative) to +1 (most positive). These scores are then categorized as 'positive', 'negative', or 'neutral', based on their values.
 
-The tweets are then preprocessed: all non-word characters are removed, single characters are removed, multiple spaces are replaced by a single space, and all text is converted to lowercase.
+## Preprocessing
+Tweets undergo a preprocessing step to make them suitable for machine learning. These steps include removing non-word characters, single letters, multiple spaces, and converting all text to lowercase.
 
-The program then creates a Bag of Words model, using the processed tweets, and splits the data into a training set and a test set.
+## Vectorization
+Tweets are vectorized using the Bag-of-Words method. This process converts the processed text into numerical feature vectors, enabling their use in the machine learning model.
 
-A Naive Bayes classifier is trained on this data and is then used to predict the sentiment of the test data.
+## Model Training and Prediction
+The dataset is split into training (80%) and testing (20%) sets. The Multinomial Naive Bayes algorithm is then trained on the training set and used to predict the sentiment of the tweets in the test set.
 
-Finally, the program calculates the net sentiment for each stock, and visualizes the sentiment distribution for each stock, the net sentiment for all stocks, and the correlation matrix heatmap. A Word Cloud is also generated using all the words in the tweets.
+## Net Sentiment Calculation
+Net sentiment for each stock is calculated by subtracting the proportion of negative tweets from the proportion of positive tweets. This gives an overall sentiment value for each company.
 
-## Output
-The output of the program includes:
+## Data Visualization
+The sentiment data is visualized in several ways, including:
 
-A CSV file ('stocks.csv') containing tweets and their respective sentiments for different stocks.
-A bar plot representing the net sentiment for each stock (green for positive sentiment and red for negative sentiment).
-Bar plots for each stock, showing the sentiment distribution ('positive', 'negative', 'neutral').
-A heatmap of the correlation matrix.
-A Word Cloud representing frequently used words in the tweets.
-Please note that due to the randomness of train-test split, the results may slightly vary each time you run the script.
+A bar chart displaying the net sentiment for each stock.
+A bar chart showing the distribution of sentiment (positive, negative, neutral) for each stock.
+A correlation matrix heatmap illustrating the relationship between various sentiment metrics.
+Correlation Matrix
+A correlation matrix heatmap is generated to visualize the relationships between different sentiment metrics for each stock. This includes the count of positive, negative, and neutral tweets, the mean sentiment, net sentiment, and the total number of tweets.
 
-# Analysis
+## Word Cloud
+Finally, a word cloud is generated to represent the most frequently occurring words in the processed tweets. This visualization helps identify common themes or topics in the tweet corpus.
 
-## Net Sentiment 
 
-![net_sentiment](https://github.com/WillNaf/Twitter_sentiment/assets/118142412/1cd78739-fc14-4e85-bfd0-c666e4e55b00)
-
-The bar chart shows that the stock with the most positive net sentiment is GOOGL, followed by GOOG and AAPL. The stock with the most negative net sentiment is AMZN.
-
-The net sentiment for each stock is calculated by subtracting the number of negative tweets from the number of positive tweets, and then dividing by the total number of tweets. For example, the net sentiment for AAPL is calculated as follows:
-
-(Number of positive tweets for AAPL) - (Number of negative tweets for AAPL) / (Total number of tweets for AAPL)
-
-The net sentiment for a stock can be interpreted as the overall sentiment of the tweets about that stock. A positive net sentiment indicates that the tweets about the stock are mostly positive, while a negative net sentiment indicates that the tweets about the stock are mostly negative.
-
-The bar chart shows that the overall sentiment of the tweets about the stocks in this dataset is positive. However, there are a no stocks with a negative net sentiment.
-
-## Sentiment Distribution
-
-## Apple
-![AAPL_distribution](https://github.com/WillNaf/Twitter_sentiment/assets/118142412/ebce896f-fe40-46e7-99a7-665c6f4014a2)
-
+## Summary 
+This tool provides an excellent example of how to leverage NLP techniques, machine learning, and data visualization to derive insights from Twitter data in the financial market context. It could provide significant value in market research, investment decisions, or simply to track public opinion about different companies.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
