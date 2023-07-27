@@ -48,7 +48,7 @@ Please note that due to the randomness of train-test split, the results may slig
 
 ![net_sentiment](https://github.com/WillNaf/Twitter_sentiment/assets/118142412/1cd78739-fc14-4e85-bfd0-c666e4e55b00)
 
-The bar chart shows that the stock with the most positive net sentiment is GOOGL, followed by GOOG and AAPL. The stock with the most negative net sentiment is AMZN, followed by FB and AMD.
+The bar chart shows that the stock with the most positive net sentiment is GOOGL, followed by GOOG and AAPL. The stock with the most negative net sentiment is AMZN.
 
 The net sentiment for each stock is calculated by subtracting the number of negative tweets from the number of positive tweets, and then dividing by the total number of tweets. For example, the net sentiment for AAPL is calculated as follows:
 
