@@ -2,16 +2,16 @@
 This project is a Python-based sentiment analysis tool for Twitter data. It focuses on tweets related to publicly traded stocks and uses various Natural Language Processing (NLP) and Machine Learning techniques to analyze the sentiment of these tweets.
 
 ## Table of Contents
-Requirements
-Data Preparation
-Sentiment Analysis
-Preprocessing
-Vectorization
-Model Training and Prediction
-Net Sentiment Calculation
-Data Visualization
-Correlation Matrix
-Word Cloud
+- Requirements
+- Data Preparation
+- Sentiment Analysis
+- Preprocessing
+- Vectorization
+- Model Training and Prediction
+- Net Sentiment Calculation
+- Data Visualization
+- Correlation Matrix
+- Word Cloud
 
 ## Requirements
 The libraries used in this project are:
